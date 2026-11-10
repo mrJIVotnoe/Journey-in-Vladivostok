@@ -1,0 +1,13 @@
+[package]
+name = "jiv-marine-core"
+version = "0.2.0"
+edition = "2021"
+authors = ["Journey In Vladivostok Marine Engineering Team <dev@vladivostok-fleet.ru>"]
+description = "High-performance Rust telemetry, collision avoidance (CPA/TCPA), and nautical geospatial algorithms for Peter the Great Gulf"
+license = "Apache-2.0"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# Zero runtime dependencies for maximum safety, portability, and Wasm compilation

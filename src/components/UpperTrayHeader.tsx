@@ -42,6 +42,7 @@ interface UpperTrayHeaderProps {
   onOpenWeChat: () => void;
   onOpenAndroid: () => void;
   onOpenAdmin?: () => void;
+  onOpenArHud?: () => void;
 }
 
 export default function UpperTrayHeader({
@@ -61,7 +62,8 @@ export default function UpperTrayHeader({
   onOpenTelegram,
   onOpenWeChat,
   onOpenAndroid,
-  onOpenAdmin
+  onOpenAdmin,
+  onOpenArHud
 }: UpperTrayHeaderProps) {
   const trayScrollRef = useRef<HTMLDivElement>(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -379,6 +381,25 @@ export default function UpperTrayHeader({
                 34
               </span>
             </button>
+
+            {/* 3. AR Spatial HUD Visor */}
+            {onOpenArHud && (
+              <button
+                type="button"
+                onClick={onOpenArHud}
+                id="upper-tray-btn-ar-hud"
+                className="px-3 py-1 rounded-xl text-xs font-semibold tracking-wide transition-all flex items-center gap-1.5 bg-cyan-400/15 hover:bg-cyan-400/25 text-cyan-200 border border-cyan-400/50 shrink-0 shadow-sm shadow-cyan-500/20 group hover:scale-[1.02] whitespace-nowrap"
+                title={lang === 'ru' ? 'Режим дополненной реальности (AR Очки / HUD Визор)' : 'Augmented Reality HUD Visor'}
+              >
+                <Sparkles className="w-3.5 h-3.5 text-cyan-300 animate-pulse shrink-0" />
+                <span>
+                  {lang === 'ru' ? 'AR Визор · Очки' : 'AR Visor'}
+                </span>
+                <span className="text-[9px] px-1.5 py-0.2 rounded bg-cyan-500/20 text-cyan-200 font-mono font-bold">
+                  RUST
+                </span>
+              </button>
+            )}
           </div>
 
         </div>

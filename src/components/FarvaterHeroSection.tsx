@@ -16,6 +16,7 @@ interface FarvaterHeroSectionProps {
   vesselsCount: number;
   selectedRouteId: string | null;
   onSelectRoute: (routeId: string) => void;
+  onOpenArHud?: () => void;
 }
 
 export default function FarvaterHeroSection({
@@ -25,7 +26,8 @@ export default function FarvaterHeroSection({
   onBookClick,
   vesselsCount,
   selectedRouteId,
-  onSelectRoute
+  onSelectRoute,
+  onOpenArHud
 }: FarvaterHeroSectionProps) {
   const { lang, t } = useTranslation();
   const [showVintageChartZoom, setShowVintageChartZoom] = useState(false);
@@ -89,8 +91,8 @@ export default function FarvaterHeroSection({
         {/* Background High-Res Aerial Yacht Image with Gradient Dark Vignette */}
         <div className="absolute inset-0 z-0 select-none overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=2000&q=80" 
-            alt="Yacht in Vladivostok Sunset"
+            src="/src/assets/images/vladivostok_yacht_hero_1794278080396.jpg" 
+            alt="Yacht in Golden Horn Bay Vladivostok"
             referrerPolicy="no-referrer"
             className="w-full h-full object-cover object-center scale-105 filter brightness-90 contrast-110"
           />
@@ -140,6 +142,17 @@ export default function FarvaterHeroSection({
               <span>Выбрать судно</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
+
+            {onOpenArHud && (
+              <button
+                onClick={onOpenArHud}
+                id="hero-btn-ar-visor"
+                className="bg-slate-900/80 hover:bg-slate-900 text-cyan-300 hover:text-cyan-200 font-mono font-bold px-6 py-3.5 rounded-full text-xs sm:text-sm tracking-wider transition-all border border-cyan-500/40 backdrop-blur-xl shadow-xl shadow-cyan-500/20 flex items-center gap-2 group hover:scale-105"
+              >
+                <Sparkles className="w-4 h-4 text-cyan-400 animate-pulse" />
+                <span>AR ВИЗОР · HUD ОЧКИ</span>
+              </button>
+            )}
           </div>
         </div>
 

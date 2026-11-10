@@ -25,8 +25,7 @@ export const VESSELS_DATA: Vessel[] = [
     captainName: 'Капитан Александр Г.',
     captainPhone: '+7 (914) 700-00-00',
     images: [
-      'https://images.unsplash.com/photo-1569263979104-865ab7cd8d13?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&w=600&q=80'
+      '/src/assets/images/vladivostok_yacht_hero_1794278080396.jpg'
     ],
     features: ['Shark Shield (Защита от акул)', 'Флайбридж', 'Теплая каюта', 'Акустика JBL Marine'],
     hasSharkRepeller: true,
@@ -53,7 +52,7 @@ export const VESSELS_DATA: Vessel[] = [
     captainName: 'Инструктор Денис М.',
     captainPhone: '+7 (994) 000-00-00',
     images: [
-      'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?auto=format&fit=crop&w=1200&q=80'
+      '/src/assets/images/vessel_catamaran_bay_1794278107495.jpg'
     ],
     features: ['Мощность 300 л.с.', 'Аудиосистема BRP', 'Инструктаж включен'],
     hasMusic: true,
@@ -80,7 +79,7 @@ export const VESSELS_DATA: Vessel[] = [
     captainName: 'Капитан Игорь П.',
     captainPhone: '+7 (914) 000-00-00',
     images: [
-      'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80'
+      '/src/assets/images/vessel_catamaran_bay_1794278107495.jpg'
     ],
     features: ['Круглосуточно 24/7', 'Тент от брызг', 'Трансфер на острова'],
     allowedActivities: ['Трансфер на острова', 'Экстренный выезд'],

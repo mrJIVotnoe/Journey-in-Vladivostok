@@ -590,6 +590,50 @@ export default function CaptainsBridge({ vessels, setVessels, bookings, setBooki
       {/* --- TAB 1: DASHBOARD --- */}
       {bridgeTab === 'dashboard' && (
         <div className="space-y-8 text-left" id="bridge-dashboard-tab">
+          
+          {/* Captain Identity & GIMS Verification Banner with Real Photo */}
+          <div className="p-5 rounded-2xl bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-950/80 border border-white/10 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-5 shadow-xl">
+            <div className="flex items-center gap-4">
+              <div className="relative w-16 h-16 rounded-2xl overflow-hidden border-2 border-amber-400/60 shadow-lg shadow-amber-500/20 shrink-0">
+                <img 
+                  src="/src/assets/images/marine_captain_portrait_1794278122165.jpg" 
+                  alt="Капитан Александр Петрович"
+                  className="w-full h-full object-cover object-center"
+                />
+                <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-emerald-500 border-2 border-slate-950 rounded-full" />
+              </div>
+              <div>
+                <div className="flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-white font-sans">
+                    Капитан Александр Петрович
+                  </h3>
+                  <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center gap-1">
+                    <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                    ГИМС ВЕРИФИЦИРОВАН
+                  </span>
+                </div>
+                <p className="text-xs text-slate-300 font-mono mt-0.5">
+                  Удостоверение ГИМС МЧС РФ: 79АВ001234 · Категория: Морское прогулочное судно до 20м
+                </p>
+                <div className="flex items-center gap-3 text-[11px] text-slate-400 font-mono mt-1">
+                  <span>Стаж: 18 лет в заливе Петра Великого</span>
+                  <span>·</span>
+                  <span className="text-amber-400">Суда в управлении: «Джулия» (60 футов), «Tuna Hunter»</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2 shrink-0">
+              <button
+                onClick={() => setShowVerificationModal(true)}
+                className="px-4 py-2 rounded-xl bg-amber-400/10 hover:bg-amber-400/20 text-amber-300 border border-amber-400/40 text-xs font-mono font-bold transition-all flex items-center gap-1.5"
+              >
+                <ShieldCheck className="w-4 h-4 text-amber-400" />
+                <span>Документы и Патент</span>
+              </button>
+            </div>
+          </div>
+
           {/* Key Metrics Grid */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             

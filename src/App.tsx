@@ -29,6 +29,7 @@ import TelegramHubModal from './components/TelegramHubModal';
 import WeChatHubModal from './components/WeChatHubModal';
 import AndroidHubModal from './components/AndroidHubModal';
 import AdminCommandCenterModal from './components/AdminCommandCenterModal';
+import ArSpatialHudModal from './components/ArSpatialHudModal';
 import UpperTrayHeader from './components/UpperTrayHeader';
 import { initTelegramEnvironment } from './lib/telegramSDK';
 import { initWeChatEnvironment } from './lib/wechatSDK';
@@ -301,6 +302,7 @@ function AppContent() {
   const [isWeChatModalOpen, setIsWeChatModalOpen] = useState<boolean>(false);
   const [isAndroidModalOpen, setIsAndroidModalOpen] = useState<boolean>(false);
   const [isAdminModalOpen, setIsAdminModalOpen] = useState<boolean>(false);
+  const [isArHudOpen, setIsArHudOpen] = useState<boolean>(false);
 
   // Initialize Telegram & WeChat WebApp SDKs
   useEffect(() => {
@@ -453,6 +455,7 @@ function AppContent() {
         onOpenWeChat={() => setIsWeChatModalOpen(true)}
         onOpenAndroid={() => setIsAndroidModalOpen(true)}
         onOpenAdmin={() => setIsAdminModalOpen(true)}
+        onOpenArHud={() => setIsArHudOpen(true)}
       />
 
       {/* Main Content Area */}
@@ -564,6 +567,7 @@ function AppContent() {
               vesselsCount={vessels.length}
               selectedRouteId={selectedRouteId}
               onSelectRoute={(routeId) => setSelectedRouteId(routeId)}
+              onOpenArHud={() => setIsArHudOpen(true)}
             />
 
             {/* SECTION — 01 / FLEET HEADER */}
@@ -1469,6 +1473,16 @@ function AppContent() {
       <AdminCommandCenterModal
         isOpen={isAdminModalOpen}
         onClose={() => setIsAdminModalOpen(false)}
+      />
+
+      {/* 8. Augmented Reality Marine Visor HUD Modal (Spatial Glasses View) */}
+      <ArSpatialHudModal
+        isOpen={isArHudOpen}
+        onClose={() => setIsArHudOpen(false)}
+        vessels={vessels}
+        selectedVessel={selectedVesselForMap}
+        onSelectVessel={setSelectedVesselForMap}
+        lang={lang}
       />
 
       {/* Decorative Elegant Footer */}

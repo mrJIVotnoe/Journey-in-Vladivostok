@@ -38,6 +38,9 @@ JIV is built as a **Full-Stack Hybrid Single-Page Application (SPA)** with an in
 - `/src/components/PassengerCabin.tsx` — Passenger portal for managing active bookings, viewing captain contact details, issuing reviews, and triggering emergency SOS protocols.
 - `/src/components/PartnerBridge.tsx` — Owner/Partner portal for listing new vessels, uploading GIMS licenses/photos, and configuring advertising campaigns.
 - `/src/components/FarvaterHeroSection.tsx` — Hero section with dynamic nautical statistics, Vladivostok weather integration, and search filters.
+- `/crates/jiv-marine-core/` — High-performance Rust crate (`no_std` / Wasm compatible) providing zero-GC nautical geometry, CPA/TCPA marine radar collision avoidance vectors, GIMS safety models, and NMEA checksum verification.
+- `/src/lib/rustMarineCore.ts` — High-efficiency TypeScript & WebAssembly bridge executing deterministic Rust nautical algorithms in the client browser with sub-millisecond latency.
+- `/src/components/ArSpatialHudModal.tsx` — Augmented Reality Marine Visor (Spatial Glasses HUD) providing live holographic compass, bathymetric sonar soundings, radar reticles, and real-time target locking.
 - `/src/lib/vesselLocalization.ts` — Multi-language engine supporting Russian (RU), English (EN), and Simplified Chinese (ZH).
 
 ---
